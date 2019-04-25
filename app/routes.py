@@ -19,7 +19,6 @@ def upload():
 
     return 'Saved ' + file.filename + ' To the SQLite Database'
 
-
 @app.route('/download')
 def download():
     fileData = FileDetails.query.filter_by(id=1).first()    
