@@ -47,7 +47,7 @@ def encrypt_and_save_file(key, infile, file_size):
             if len(data) == 0:
                 break
             elif len(data) % 16 != 0:
-                chunk += b' ' * (16 - len(data) % 16)
+                data += b' ' * (16 - len(data) % 16)
             sha512.update(data)
             enc_data = encryptor.encrypt(data)
             outfile.write(enc_data)

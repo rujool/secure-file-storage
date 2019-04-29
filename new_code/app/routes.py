@@ -72,15 +72,20 @@ def register():
 	return render_template('register.html',title = 'Register', form = form)
 
 @app.route('/upload',methods = ['GET'])
+@login_required
 def upload():
 	return render_template('file_upload.html',title='Upload File',form = None)
 
 
 @app.route('/handle_upload',methods=['POST'])
+@login_required
 def handle_upload():
+
 	print("Posted file: {}".format(request.files['file']))
+	secret = current_user.get_password_hash()
+	print(secret)
 	file = request.files['file']
 	file_size = validateAndGetFileSize(file)
 	if file and file_size and validateExtension(secure_filename(file.filename)):
-		encrypt_and_save_file('secret',file,file_size)
+		encrypt_and_save_file(secret,file,file_size)
 	return "File uploaded"
