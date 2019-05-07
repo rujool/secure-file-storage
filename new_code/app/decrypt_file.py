@@ -28,4 +28,4 @@ def decrypt_file(key, in_filename):
 
             outfile.truncate(origsize)
 
-# decrypt_file(hashlib.sha256('secret'.encode('utf-8')).digest(),'../uploaded_files/Chapter17.ppt.enc')
+decrypt_file(hashlib.sha256('secret'.encode('utf-8')).digest(),'../uploaded_files/register.png.enc')
