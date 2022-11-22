@@ -43,7 +43,7 @@ oauth==1.0.1
 olefile==0.45.1
 opencv-python==4.0.0.21
 pexpect==4.2.1
-Pillow==5.1.0
+Pillow==9.3.0
 pipenv==2018.11.26
 protobuf==3.0.0
 pycairo==1.16.2
